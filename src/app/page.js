@@ -3,6 +3,7 @@ import HomeCoverSection from "../components/Home/HomeCoverSection";
 import { FeaturePosts } from "../components/Home/FeaturePosts";
 import { RecentPosts } from "../components/Home/RecentPosts";
 
+
 export default function Home() {
 
   console.log(allBlogs)
@@ -12,6 +13,7 @@ export default function Home() {
       <HomeCoverSection blogs={allBlogs}/>
       <FeaturePosts blogs={allBlogs}/>
       <RecentPosts blogs={allBlogs} />
+     
     </main>
   )
 }
