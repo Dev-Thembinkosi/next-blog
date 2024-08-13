@@ -1,4 +1,6 @@
 import { allBlogs } from "@/.contentlayer/generated";
+import BlogDetails from "@/src/components/Blog/BlogDetails";
+import { RenderMdx } from "@/src/components/Blog/RenderMdx";
 import { Tag } from "@/src/components/Elements/Tag";
 import Image from "next/image";
 
@@ -18,17 +20,22 @@ export default function BlogPage({ params }) {
             {blog.title}
           </h1>
         </div>
-        <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 ">
-          <Image
-            src={blog.image.filePath.replace("../public", "")}
-            placeholder="blur"
-            blurDataURL={blog.image.blurhashDataUrl}
-            alt={blog.title}
-            width={blog.image.width}
-            height={blog.image.height}
-            className="aspect-square w-full h-full object-cover object-center "
-          />
-        </div>
+        <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 " />
+        <Image
+          src={blog.image.filePath.replace("../public", "")}
+          placeholder="blur"
+          blurDataURL={blog.image.blurhashDataUrl}
+          alt={blog.title}
+          width={blog.image.width}
+          height={blog.image.height}
+          className="aspect-square w-full h-full object-cover object-center "
+        />
+      </div>
+      <BlogDetails blog={blog} slug={params.slug} />
+      <div className="grid grid-cols-12 gap-16 mt-8 px-10">
+        <div className="col-span-4">Toc</div>
+        <RenderMdx blog={blog}/>
+        
       </div>
     </article>
   );

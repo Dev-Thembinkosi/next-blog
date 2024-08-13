@@ -13,15 +13,15 @@ module.exports = {
         accent: "#7B00D3", 
         accentDark: "#ffdb4d",
         gray: "#747474",
+      },
+      fontFamily: {
+        mr: ["var(--font-mr)"],   
+        in: ["var(--font-in)"],
+      },
     },
-    fontFamily:{
-      mr: ["var(--font-mr)"],   
-      in: ["var(--font-in)"]
-    }
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'), // Moved out of `theme.extend`
   ],
-  }
-
 }
