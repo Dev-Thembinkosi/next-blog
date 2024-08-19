@@ -20,6 +20,14 @@ module.exports = {
       },
     },
   },
+
+  variants: {
+    extend: {
+      padding: ['data-level'],
+      borderWidth: ['data-level'],
+    },
+  },
+  
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'), // Moved out of `theme.extend`
