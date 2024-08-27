@@ -3,14 +3,25 @@ import BlogDetails from "@/src/components/Blog/BlogDetails";
 import { RenderMdx } from "@/src/components/Blog/RenderMdx";
 import  { Tag }  from "@/src/components/Elements/Tag";
 import Image from "next/image";
-import { slug } from "github-slugger"
+import { slug } from "github-slugger";
+
+
+
+
+export async function generateStaticParams() {
+
+ 
+  return allBlogs.map((blog) => ({slug:blog._raw.flattenedPath}));
+}
+
+
 
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 
   return (
     <article>
-      <div className="mb-8 text-center relative width-full h-[70vh] bg-dark">
+      <div className="mb-8 text-center relative w-full h-[70vh] bg-dark">
         <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Tag
             name={blog.tags[0]}

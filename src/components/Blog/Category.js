@@ -8,12 +8,12 @@ const Category = ({ link = "#", name, active, ...props }) => {
     <Link
       href={link}
       className={cx(
-        "inline-block py-3 px-10 rounded-full font-semibold border-2 border-solid border-light hover:scale-105 transition-all ease duration-200",
+        "inline-block py-2 px-4 rounded-full border-2 border-solid border-dark hover:scale-105 transition-all ease duration-200 m-2",
         props.className,
         active ? "bg-dark text-light" : "bg-light text-dark"
       )}
     >
-      {name}
+      #{name}
     </Link>
   );
 };
