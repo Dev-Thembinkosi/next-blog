@@ -1,3 +1,4 @@
+import ContactForm from "@/src/components/Contact/ContactForm";
 import LottieAnimation from "@/src/components/Contact/LottieAnimation";
 
 export default function Contact() {
@@ -6,7 +7,10 @@ export default function Contact() {
       <div className="inline-block w-2/5 h-full border-r-2 border-solid border-dark">
         <LottieAnimation />
       </div>
-      <div>Contact form</div>
+      <div className="w-3/5 flex flex-col items-start justify-center px-16 pb-8">
+        <h2 className="font-bold capitalize text-4xl ">Let's connect</h2>
+        <ContactForm />
+      </div>
     </section>
   );
 }
