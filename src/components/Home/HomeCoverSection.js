@@ -8,7 +8,7 @@ import { slug } from "github-slugger";
 function HomeCoverSection({blogs}) {
 
     const sortedBlogs = sortBlogs(blogs);
-    const blog = sortedBlogs[1];
+    const blog = sortedBlogs[0];
 
 
 
