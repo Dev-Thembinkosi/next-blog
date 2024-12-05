@@ -4,7 +4,7 @@ import { RenderMdx } from "@/src/components/Blog/RenderMdx";
 import  { Tag }  from "@/src/components/Elements/Tag";
 import Image from "next/image";
 import { slug } from "github-slugger";
-import siteMetadata from "@/project files/siteMetaData";
+import siteMetadata, { description, title } from "@/project files/siteMetaData";
 
 
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
   
   const publishedAt = new Date(blog.publishedAt).toISOString();
   const modifiedAt = new Date(blog.updatedAt || blog.publishedAt).toISOString();
-  const imageList = [siteMetadata.socialBanner];
+  let imageList = [siteMetadata.socialBanner];
 
   if(blog.image){
     imageList = typeof blog.image.filePath === "string" ? 
@@ -51,10 +51,17 @@ export async function generateMetadata({ params }) {
       publishedTime: publishedAt,
       modfiedTime: modifiedAt,
       images: ogImages,
-      author: authors.length > 0 ? authors : {siteMetadata,author}
+      authors: authors.length > 0 ? authors : [siteMetadata.author]
     
       
     },
+
+    twitter: {
+      card: 'summary_large_image',
+      description: blog.description,
+      title: blog.title,
+      image: ogImages,
+    }
   }
 }
 
