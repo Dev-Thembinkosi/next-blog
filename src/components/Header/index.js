@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import {LinkedinIcon, DribbbleIcon, GithubIcon, TwitterIcon, SunIcon } from "../icons";
+import siteMetadata from "@/project files/siteMetaData";
 
 
 const Header = () => {
@@ -16,10 +17,10 @@ const Header = () => {
             </button>
         </nav>
         <div>
-            <a href="http://" className="inline-block w-6 h-6 mr-4"><LinkedinIcon className="hover:scale-125 transition-all ease duration-200"/></a>
-            <a href="http://" className="inline-block w-6 h-6 mr-4"><TwitterIcon className="hover:scale-125 transition-all ease duration-200"/></a>
-            <a href="http://" className="inline-block w-6 h-6 mr-4"><GithubIcon className="hover:scale-125 transition-all ease duration-200"/></a>
-            <a href="http://" className="inline-block w-6 h-6 mr-4"><DribbbleIcon className="hover:scale-125 transition-all ease duration-200"/></a>
+            <a href={siteMetadata.linkedin} className="inline-block w-6 h-6 mr-4"><LinkedinIcon className="hover:scale-125 transition-all ease duration-200"/></a>
+            <a href={siteMetadata.twitter} className="inline-block w-6 h-6 mr-4"><TwitterIcon className="hover:scale-125 transition-all ease duration-200"/></a>
+            <a href={siteMetadata.github} className="inline-block w-6 h-6 mr-4"><GithubIcon className="hover:scale-125 transition-all ease duration-200"/></a>
+            <a href={siteMetadata.dribbble} className="inline-block w-6 h-6 mr-4"><DribbbleIcon className="hover:scale-125 transition-all ease duration-200"/></a>
         </div>
     </header>
   )
