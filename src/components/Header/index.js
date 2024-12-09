@@ -1,10 +1,17 @@
+"use client"
+
 import Link from "next/link";
 import Logo from "./Logo";
 import {LinkedinIcon, DribbbleIcon, GithubIcon, TwitterIcon, SunIcon } from "../icons";
 import siteMetadata from "@/project files/siteMetaData";
+import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 
 
 const Header = () => {
+
+  const [mode, setMode] = useThemeSwitch();
+
+  
   return (
     <header className="w-full p-4 px-10 flex items-center justify-between">
         <Logo />
@@ -12,7 +19,7 @@ const Header = () => {
             <Link href="/" className="mr-2">Home</Link>
             <Link href="about" className="mx-2">About</Link>
             <Link href="/contact" className="mx-2">Contact</Link>
-            <button>
+            <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
               <SunIcon />
             </button>
         </nav>
