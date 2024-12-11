@@ -8,7 +8,7 @@ const Logo = () => {
         <div className="w-16 rounded-full overflow-hidden border border-solid border-dark mr-4">
             <Image src={profileImg} alt="log" className="w-full h-auto rounded-full"/>
         </div>
-        <span className="font-bold text-xl">TCODES</span>
+        <span className="font-bold text-xl text-gray-500">T /DevLogs </span>
     </Link>
   )
 }
