@@ -41,7 +41,7 @@ const Header = () => {
             <span className="absolute top-0 inline-block w-full h-0.5 bg-dark dark:bg-light rounded transition-all ease duration-200"
 
               style={{
-                opacity: click ? 0 :1
+                opacity: click ? 0 : 1
               }}
               
             
@@ -63,6 +63,26 @@ const Header = () => {
           </div>
         </div>
       </button>
+      
+      <nav className="w-max py-3 px-6 sm:px-8 border border-solid border-dark rounded-full font-medium capitalize flex sm:hidden fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm z-50 transition-all ease duration-500"
+        style={{
+          top: click ? "1rem" :"-5rem"
+        }}  
+      >
+        <Link href="/" className="mr-2">
+          Home
+        </Link>
+        <Link href="/about" className="mx-2">
+          About
+        </Link>
+        <Link href="/contact" className="mx-2">
+          Contact
+        </Link>
+        <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+          <SunIcon />
+        </button>
+      </nav>
+
 
       <nav className="w-max py-3 px-8 border border-solid border-dark rounded-full font-medium capitalize hidden sm:flex items-center fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm z-50">
         <Link href="/" className="mr-2">
