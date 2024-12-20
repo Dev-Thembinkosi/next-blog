@@ -14,7 +14,7 @@ export const Footer = () => {
   console.log(errors);
 
   return (
-    <footer className="mt-16  bg-dark dark:bg-accentDark/90  rounded-2xl sm:mx-10 flex flex-col items-center text-light dark:text-dark">
+    <footer className="mt-16 bg-dark dark:bg-light/70 rounded-2xl sm:mx-10 flex flex-col items-center text-light dark:text-dark">
       <h3 className="mt-16 font-medium dark:font-bold text-center capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
         Interesting Stories | Update | Guides
       </h3>
@@ -24,7 +24,7 @@ export const Footer = () => {
       </p>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx04"
+        className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light p-1 sm:p-2 rounded mx04"
       >
         <input
           type="email"
@@ -35,7 +35,8 @@ export const Footer = () => {
 
         <input
           type="submit"
-          className="bg-dark text-light dark:text-dark dark:bg-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1"
+          value="Submit"
+          className="bg-dark text-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1"
         />
       </form>
       <div className="flex items-center mt-8">
