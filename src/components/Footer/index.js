@@ -14,7 +14,7 @@ export const Footer = () => {
   console.log(errors);
 
   return (
-    <footer className="mt-16 bg-dark dark:bg-light/70 rounded-2xl sm:mx-10 flex flex-col items-center text-light dark:text-dark">
+    <footer className="mt-16 bg-dark dark:bg-accentDark/90 rounded-2xl m-5 sm:mx-10 flex flex-col items-center text-light dark:text-dark">
       <h3 className="mt-16 font-medium dark:font-bold text-center capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
         Interesting Stories | Update | Guides
       </h3>
@@ -47,18 +47,18 @@ export const Footer = () => {
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
       <a href={siteMetadata.github} className="inline-block w-6 h-6 mr-4">
-          <GithubIcon className="hover:scale-125 transition-all ease duration-200 fill-light" />
+          <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
         </a>
         <a href={siteMetadata.dribbble} className="inline-block w-6 h-6 mr-4">
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
       </div>
 
-      <div className="w-full mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-row items-center justify-between">
+      <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between">
         <span className="text-center">
           &copy;2024 Tcodes. All rights reserved.
         </span>
-        <Link href="/sitemap.xml" className="text-center underline ">
+        <Link href="/sitemap.xml" className="text-center underline my-4 md:0">
           Sitemap
         </Link>
         <div className="text-center">
