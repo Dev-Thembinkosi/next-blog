@@ -56,7 +56,7 @@ export const Footer = () => {
 
       <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between">
         <span className="text-center">
-          &copy;2024 Tcodes. All rights reserved.
+          &copy;2024 Dev T. All rights reserved.
         </span>
         <Link href="/sitemap.xml" className="text-center underline my-4 md:0">
           Sitemap
@@ -65,7 +65,7 @@ export const Footer = () => {
           Made with &hearts; by{" "}
           <a href="#" className="underline">
             {" "}
-            TCodes
+            Dev T
           </a>
         </div>
       </div>
