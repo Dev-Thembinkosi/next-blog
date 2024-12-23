@@ -9,6 +9,8 @@ export const AboutCoverSection = () => {
           src={profileCharater}
           alt="T Codes Image"
           className="w-4/5 xs:w-3/4 md:w-full h-full object-contain object-center"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1080px), 50vw, 50vw"
         />
       </div>
       <div className="w-full md:w-1/2 flex flex-col  text-left items-start justify-center px-5 xs:p-10 pb-10 lg:px-16"> 
