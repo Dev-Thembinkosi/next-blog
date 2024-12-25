@@ -6,7 +6,7 @@ const ThemeScript = () => {
   return (
 
     
-    <Script id="script" strategy="beforeInteractive" >
+    <Script id="script" strategy="AfterInteractive" >
           {`
             if (
               localStorage.theme === 'dark' || 
