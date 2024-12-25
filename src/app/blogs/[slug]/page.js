@@ -70,6 +70,33 @@ export async function generateMetadata({ params }) {
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 
+
+  let imageList = [siteMetadata.socialBanner];
+
+  if(blog.image){
+    imageList = typeof blog.image.filePath === "string" ? 
+    [siteMetadata.siteUrl + blog.image.filePath.replace("../public", "")] : blog.image
+  }
+
+
+  const jsonLd ={
+
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": blog.title,
+    "description" :blog.description,
+    "image":imageList,
+    "datePublished": new Date(blog.publishedAt).toISOString(),
+    "dateModified": new Date(blog.updatedAt || blog.publishedAt).toISOString(),
+    "author": [{
+        "@type": "Person",
+        "name": blog?.author ? [blog.author] : siteMetadata.author,
+        "url": "https://example.com/profile/janedoe123"
+      }]
+  }
+
+
+
   return (
     <article>
       <div className="mb-8 text-center relative w-full h-[70vh] bg-dark">
@@ -91,7 +118,9 @@ export default function BlogPage({ params }) {
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}
-          className="aspect-square w-full h-full object-cover object-center "
+          className="aspect-square w-full h-full object-cover object-center"
+          priority
+          sizes="100vw"
         />
       </div>
       <BlogDetails blog={blog} slug={params.slug} />
